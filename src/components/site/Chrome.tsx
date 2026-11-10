@@ -51,8 +51,8 @@ export function Header() {
 
 export function Footer() {
   const { data } = useQuery(settingsQuery);
-  const c = data?.contact ?? {};
-  const s = data?.social ?? {};
+  const c = data?.["contact"] ?? {};
+  const s = data?.["social"] ?? {};
   const socials = Object.entries(s).filter(([, v]) => v);
   return (
     <footer className="relative overflow-hidden bg-ink text-ink-foreground">
@@ -68,9 +68,9 @@ export function Footer() {
           ))}
         </div>
         <div className="space-y-1 text-sm text-ink-foreground/75">
-          {c.email && <p>{c.email}</p>}
-          {c.phone && <p>{c.phone}</p>}
-          {c.office && <p>{c.office}</p>}
+          {c["email"] && <p>{c["email"]}</p>}
+          {c["phone"] && <p>{c["phone"]}</p>}
+          {c["office"] && <p>{c["office"]}</p>}
           <div className="flex flex-wrap gap-3 pt-2">
             {socials.map(([k, v]) => (
               <a key={k} href={v} target="_blank" rel="noreferrer" className="eyebrow text-primary">{k}</a>
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
       </div>
       <div className="relative border-t border-sidebar-border px-5 py-4 text-center text-xs text-ink-foreground/50">
-        © {new Date().getFullYear()} Office of {SITE.short} · <Link to="/auth" className="hover:text-ink-foreground">Staff login</Link>
+        © {new Date().getFullYear()} Office of {SITE.short}
       </div>
     </footer>
   );

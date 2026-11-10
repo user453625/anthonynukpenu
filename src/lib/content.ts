@@ -71,7 +71,7 @@ export const articleQuery = (slug: string) =>
   queryOptions({
     queryKey: ["article", slug],
     queryFn: () =>
-      pub(supabase.from("news_articles").select("*").eq("slug", slug).eq("status", "published").maybeSingle()),
+      pub(supabase.from("news_articles").select("*").eq("slug", slug).eq("status", "published").maybeSingle()) as Promise<Tables<"news_articles"> | null>,
   });
 
 export const financeQuery = queryOptions({
