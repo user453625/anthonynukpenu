@@ -1,0 +1,8 @@
+packages:
+  - "."
+
+allowBuilds:
+  esbuild: true
+
+overrides:
+  rolldown: 1.2.1

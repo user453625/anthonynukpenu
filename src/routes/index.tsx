@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { CampaignStripeBackground } from "@/components/site/CampaignStripeBackground";
 import { Section, meta } from "@/components/site/Chrome";
 import { SITE, bioQuery, newsQuery, timelineQuery, fmtDate } from "@/lib/content";
-import wide from "@/assets/campaign-wide.jpg.asset.json";
-import poster from "@/assets/vote-poster.jpg.asset.json";
+import wide from "@/assets/nukpenu-campaign-wide.jpg";
+import poster from "@/assets/nukpenu-vote-poster.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,7 +57,7 @@ function Index() {
           </div>
           <div className="relative h-[420px] md:h-[620px]">
             <img
-              src={wide.url}
+              src={wide}
               alt="Anthony Kwame Mensah Nukpenu in a green fugu smock"
               className="clip-diagonal absolute inset-0 h-full w-full object-cover object-right"
             />
@@ -75,7 +75,7 @@ function Index() {
             Full biography <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <img src={poster.url} alt="Vote Anthony Kwame Mensah Nukpenu as your next Deputy National Organizer" className="w-full shadow-xl" loading="lazy" />
+        <img src={poster} alt="Vote Anthony Kwame Mensah Nukpenu as your next Deputy National Organizer" className="w-full shadow-xl" loading="lazy" />
       </Section>
 
       <section className="relative overflow-hidden text-ink-foreground">

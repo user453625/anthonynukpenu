@@ -3,7 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { PageHero, Section, Sources, meta } from "@/components/site/Chrome";
 import { CampaignStripeBackground } from "@/components/site/CampaignStripeBackground";
 import { bioQuery, links } from "@/lib/content";
-import portrait from "@/assets/campaign-portrait.jpg.asset.json";
+import portrait from "@/assets/nukpenu-campaign-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: meta("About Anthony Nukpenu — Biography", "Biography of Anthony Kwame Mensah Nukpenu, NDC Greater Accra Regional Organizer.") }),
@@ -21,7 +21,7 @@ function About() {
         <Section className="relative grid gap-12 md:grid-cols-[1fr_2fr]">
           <div className="md:sticky md:top-24 md:self-start">
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={portrait.url} alt="Portrait of Anthony Kwame Mensah Nukpenu" className="h-full w-full object-cover object-[50%_20%]" />
+              <img src={portrait} alt="Portrait of Anthony Kwame Mensah Nukpenu" className="h-full w-full object-cover object-[50%_20%]" />
             </div>
           </div>
           <div className="space-y-14">
